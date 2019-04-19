@@ -2,35 +2,33 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(new Demo6StackApp());
 
-class Demo6StackApp extends StatelessWidget{
+class Demo6StackApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
       title: "i am demo6stack home",
-      theme: new ThemeData(
-        primaryColor: Colors.blueAccent
-      ),
+      theme: new ThemeData(primaryColor: Colors.blueAccent),
       home: new Demo6StackStatefulWidget(),
     );
   }
 }
-class Demo6StackStatefulWidget extends StatefulWidget{
+
+class Demo6StackStatefulWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
     return new Demo6StackState();
   }
 }
-class Demo6StackState extends State<Demo6StackStatefulWidget>{
 
+class Demo6StackState extends State<Demo6StackStatefulWidget> {
   double height = 100.0;
 
-  void _updateCardHeight(){
+  void _updateCardHeight() {
     setState(() {
-      height+=10.0;
-      if(height >210.0)
-        height = 10.0;
+      height += 10.0;
+      if (height > 210.0) height = 10.0;
     });
   }
 
@@ -48,6 +46,15 @@ class Demo6StackState extends State<Demo6StackStatefulWidget>{
           backgroundImage: new AssetImage("assets/repayment_model_bg4.png"),
           radius: 100.0,
         ),
+        new Positioned(
+            left:85.0,
+            right: 35.0,
+            top: 55.0,
+            child: new Text(
+          "没有做不到的只有想不到的",
+          style: new TextStyle(
+              color: Colors.white, fontSize: 20.0, fontFamily: "serif"),
+        )),
         new Container(
           decoration: new BoxDecoration(
             color: Colors.black45,
@@ -71,18 +78,35 @@ class Demo6StackState extends State<Demo6StackStatefulWidget>{
         child: new Column(
           children: <Widget>[
             new ListTile(
-              title: new Text("1625 Main Street", style: new TextStyle(fontWeight: FontWeight.w500),),
+              title: new Text(
+                "1625 Main Street",
+                style: new TextStyle(fontWeight: FontWeight.w500),
+              ),
               subtitle: new Text("My City, CA 99984"),
-              leading: new Icon(Icons.restaurant_menu, color: Colors.blue[500],),
+              leading: new Icon(
+                Icons.restaurant_menu,
+                color: Colors.blue[500],
+              ),
             ),
             new Divider(),
             new ListTile(
-              title: new Text("(408) 555-1212", style: new TextStyle(fontWeight: FontWeight.w500),),
-              leading: new Icon(Icons.contact_phone, color: Colors.blue[500],),
+              title: new Text(
+                "(408) 555-1212",
+                style: new TextStyle(fontWeight: FontWeight.w500),
+              ),
+              leading: new Icon(
+                Icons.contact_phone,
+                color: Colors.blue[500],
+              ),
             ),
             new ListTile(
-              title: new Text("costa@example.com",),
-              leading: new Icon(Icons.contact_mail, color: Colors.blue[500],),
+              title: new Text(
+                "costa@example.com",
+              ),
+              leading: new Icon(
+                Icons.contact_mail,
+                color: Colors.blue[500],
+              ),
             )
           ],
         ),
@@ -90,29 +114,25 @@ class Demo6StackState extends State<Demo6StackStatefulWidget>{
     );
 
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("i am demo6stack home")
-      ),
+      appBar: new AppBar(title: new Text("i am demo6stack home")),
       body: new ListView(
-            padding: new EdgeInsets.all(15.0),
-            children: <Widget>[
-              new Center(
-                  child: stack
-              ),
-              card,
-              new Center(
-                child: new MaterialButton(
-                  onPressed: () {},
-                  child: new Text('Hello'),
-                  padding: new EdgeInsets.only(left: 10.0, right: 10.0),
-                ),
-              ),
-            ],
+        padding: new EdgeInsets.all(15.0),
+        children: <Widget>[
+          new Center(child: stack),
+          card,
+          new Center(
+            child: new MaterialButton(
+              onPressed: () {},
+              child: new Text('Hello'),
+              padding: new EdgeInsets.only(left: 10.0, right: 10.0),
+            ),
           ),
+        ],
+      ),
       floatingActionButton: new FloatingActionButton(
-      onPressed: _updateCardHeight,
-      tooltip: "update card height",
-      child: new Icon(Icons.update),
+        onPressed: _updateCardHeight,
+        tooltip: "update card height",
+        child: new Icon(Icons.update),
       ),
     );
   }
