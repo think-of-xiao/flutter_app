@@ -62,10 +62,31 @@ class Demo13State extends State<Demo13StatefulWidget>
             new Container(
                 margin: EdgeInsets.only(top: 15.0),
                 child: new GestureDetector(
-                  onTap: () {
+                  onTap: () { // 用户点击了控件
                     MyToastUtils.showToastInBottom("双击我会旋转哟~~", 1);
                   },
-                  onDoubleTap: () {
+                  onLongPress: (){
+                    // 用户长按了控件
+                  },
+                  onTapDown: (events){
+                    // 用户按下时的动作
+                  },
+                  onTapUp: (events){
+                    // 用户松开时的动作
+                  },
+                  onTapCancel: (){
+                    // tap事件消失时动作
+                  },
+                  onVerticalDragStart: (events){
+                    // 垂直拖动时的动作
+                  },
+                  onVerticalDragUpdate: (events){
+                    // 垂直拖动位置更新时的动作
+                  },
+                  onVerticalDragEnd: (events){
+                    // 垂直拖拽结束时的动作
+                  },
+                  onDoubleTap: () { // 用户快速连续两次在同一位置轻敲屏幕.
                     if(controller.isCompleted){ // 动画完成就从结束的位置往回动，回到初始位置
                       controller.reverse();
                     }else{

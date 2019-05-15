@@ -45,6 +45,14 @@ flutter:
     - assets/fx_mingxi.png
     - assets/repayment_model_bg4.png
 
+  fonts:
+    - family: familyFontStyle
+      fonts:
+        - asset: fonts/webfont.ttf
+#    - family: familyFontStyle1
+#      fonts:
+#        - asset: fonts/webfont1.ttf
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 
