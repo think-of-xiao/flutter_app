@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/main1page/EachView.dart';
 
+/// 自定义的底部菜单栏
 class BottomAppBarDemo extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {

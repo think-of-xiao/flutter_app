@@ -6,6 +6,7 @@ import 'package:flutter_app/mainpage/PageScreen.dart';
 
 void main() => runApp(new MyApp());
 
+/// 通用的底部菜单栏
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

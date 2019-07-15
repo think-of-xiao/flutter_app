@@ -3,6 +3,7 @@ import 'package:flutter_app/main1page/BottomAppBarDemo.dart';
 
 void main()=>runApp(new MyApp());
 
+/// 自定义底部菜单栏入口
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
